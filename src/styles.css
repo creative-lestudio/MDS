@@ -30,3 +30,4 @@ ol{margin:6px 0;padding-left:20px;font-size:14px;color:var(--m)}
 .bar{height:8px;background:#ffffff40;border-radius:9px;margin-top:10px;overflow:hidden}.bar i{display:block;height:100%;background:#fff}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}.stats .card{align-items:center;margin:0}.stats b{font-size:22px}
 .card.row{flex-direction:row;align-items:center}
+.send input{min-width:0}.send .btn{flex-shrink:0}
