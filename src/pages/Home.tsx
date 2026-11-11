@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { equipment, offers, events } from '../data'
 import { useApp } from '../store'
 import Icon from '../Icon'
+import resona from '../assets/resona.webp'
 export const dueDate = (last: string, m: number) => { const d = new Date(last); d.setMonth(d.getMonth() + m); return d }
 export const daysTo = (d: Date) => Math.ceil((d.getTime() - Date.now()) / 864e5)
 const Ring = ({ pct, late, label }: { pct: number; late: boolean; label: string }) => {
@@ -20,7 +21,7 @@ export default function Home() {
     <section className="hero">
       <div><span className="badge">Ecosistema Mindray</span><h2>Servicio, formación y comunidad para tu ecógrafo</h2>
         <Link to="/servicios" className="btn light">Agendar servicio <Icon n="chevron" s={16} /></Link></div>
-      <img src="/img/resona.webp" alt="Mindray Resona I9" />
+      <img src={resona} alt="Mindray Resona I9" />
     </section>
     <div className="quick">{[['/tienda', 'bag', 'Tienda'], ['/servicios', 'wrench', 'Agendar'], ['/academia', 'cap', 'Cursos'], ['/eventos', 'ticket', 'Eventos']].map(([to, i, l]) =>
       <Link key={to} to={to} className="glass tile"><span className="ico"><Icon n={i} /></span>{l}</Link>)}</div>

@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { products } from '../data'
 import { useApp } from '../store'
 import Icon, { catIcon } from '../Icon'
+import resona from '../assets/resona.webp'
+import productos from '../assets/productos.webp'
 const cats = ['Todos', 'Equipos', 'Transductores', 'Consumibles', 'Accesorios']
 export default function Shop() {
   const { cart, addToCart, setQty, checkout } = useApp()
@@ -10,10 +12,10 @@ export default function Shop() {
   const total = items.reduce((a, i) => a + i.p.price * i.q, 0)
   return <>
     <p className="eyebrow">Catálogo</p><h1 className="large">Tienda</h1>
-    <div className="banner" style={{ backgroundImage: 'url(/img/productos.webp)' }}><div><b>Todo para tu ecógrafo</b><small>Transductores, consumibles y accesorios originales</small></div></div>
+    <div className="banner" style={{ backgroundImage: `url(${productos})` }}><div><b>Todo para tu ecógrafo</b><small>Transductores, consumibles y accesorios originales</small></div></div>
     <div className="seg">{cats.map(c => <button key={c} className={c === cat ? 'on' : ''} onClick={() => setCat(c)}>{c}</button>)}</div>
     <div className="grid">{products.filter(p => cat === 'Todos' || p.cat === cat).map(p => <div key={p.id} className="glass prod">
-      <div className={'vis ' + p.cat}>{p.cat === 'Equipos' ? <img src="/img/resona.webp" alt="" /> : <Icon n={catIcon(p.cat)} s={44} />}</div>
+      <div className={'vis ' + p.cat}>{p.cat === 'Equipos' ? <img src={resona} alt="" /> : <Icon n={catIcon(p.cat)} s={44} />}</div>
       <b>{p.name}</b><small>{p.desc}</small>
       <div className="row"><strong>{p.price ? `$${p.price.toLocaleString('en-US')}` : 'Cotizar'}</strong>
         <button className="round" aria-label="Agregar" onClick={() => { setDone(false); addToCart(p.id) }}><Icon n="plus" s={18} /></button></div></div>)}</div>

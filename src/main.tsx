@@ -1,6 +1,8 @@
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, MemoryRouter } from 'react-router-dom'
 import App from './App'
 import { Provider } from './store'
 import './styles.css'
-createRoot(document.getElementById('root')!).render(<BrowserRouter><Provider><App /></Provider></BrowserRouter>)
+// En el artefacto publicado la URL no admite rutas, se navega en memoria.
+const Router = import.meta.env.VITE_MEMORY ? MemoryRouter : BrowserRouter
+createRoot(document.getElementById('root')!).render(<Router><Provider><App /></Provider></Router>)
