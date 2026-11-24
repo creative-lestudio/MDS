@@ -19,6 +19,6 @@ const P: Record<string, string> = {
   gift: 'M4 11h16v9H4zM3 7h18v4H3zM12 7v13M12 7c-2 0-4-1-4-2.5S10 3 12 7c2-4 4-3 4-2.5S14 7 12 7z',
 }
 export default function Icon({ n, s = 22, fill = false }: { n: string; s?: number; fill?: boolean }) {
-  return <svg className="ic" width={s} height={s} viewBox="0 0 24 24" fill={fill ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d={P[n] || P.cube} /></svg>
+  return <svg className="ic" width={s} height={s} viewBox="0 0 24 24" fill={fill ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d={P[n] || P.cube} /></svg>
 }
 export const catIcon = (c: string) => ({ Transductores: 'probe', Consumibles: 'drop', Accesorios: 'shield', Equipos: 'cube' } as Record<string, string>)[c] || 'cube'
