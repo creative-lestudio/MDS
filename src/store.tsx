@@ -10,7 +10,14 @@ type Ctx = State & {
 const C = createContext<Ctx>(null as never)
 export const useApp = () => useContext(C)
 export function Provider({ children }: { children: ReactNode }) {
-  const [s, setS] = useState<State>(() => { try { return { ...init, ...JSON.parse(localStorage.getItem('mds') || '{}') } } catch { return init } })
+  const [s, setS] = useState<State>(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem('mds') || '{}')
+      // descarta productos de ejemplo de versiones anteriores (ids p1, p2...)
+      if (saved.cart) saved.cart = Object.fromEntries(Object.entries(saved.cart).filter(([id]) => !/^p\d+$/.test(id)))
+      return { ...init, ...saved }
+    } catch { return init }
+  })
   useEffect(() => { try { localStorage.setItem('mds', JSON.stringify(s)) } catch {} }, [s])
   const uid = () => Math.random().toString(36).slice(2, 8).toUpperCase()
   const pts = (amt: number) => Math.round(amt / 10)

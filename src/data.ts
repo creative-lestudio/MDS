@@ -1,14 +1,4 @@
-// Datos de ejemplo. En producción se reemplazan por tablas de Supabase (ver supabase/schema.sql).
-export type Product = { id: string; name: string; cat: 'Transductores' | 'Consumibles' | 'Accesorios' | 'Equipos'; price: number; desc: string; emoji: string }
-export const products: Product[] = [
-  { id: 'p1', name: 'Transductor lineal L12-4', cat: 'Transductores', price: 1850, desc: 'Alta resolución para partes blandas y vascular.', emoji: '📡' },
-  { id: 'p2', name: 'Transductor convexo C5-1', cat: 'Transductores', price: 1690, desc: 'Abdomen y obstetricia.', emoji: '📡' },
-  { id: 'p3', name: 'Gel ecográfico 5L', cat: 'Consumibles', price: 28, desc: 'Hipoalergénico, alta conductividad.', emoji: '🧴' },
-  { id: 'p4', name: 'Papel térmico (pack x10)', cat: 'Consumibles', price: 45, desc: 'Compatible con impresoras Mindray.', emoji: '🧾' },
-  { id: 'p5', name: 'Funda protectora para transductor', cat: 'Accesorios', price: 35, desc: 'Pack de 50 unidades estériles.', emoji: '🛡️' },
-  { id: 'p6', name: 'Carro móvil con soporte', cat: 'Accesorios', price: 420, desc: 'Ajustable en altura, 4 ruedas con freno.', emoji: '🛒' },
-  { id: 'p7', name: 'Mindray DC-70 (consulta)', cat: 'Equipos', price: 0, desc: 'Ecógrafo premium. Solicita cotización.', emoji: '🩻' },
-]
+// Datos de ejemplo (cursos, eventos, equipos del cliente). Los productos reales viven en src/products.json (inversionesmds.com).
 export type Course = { id: string; title: string; level: string; hours: number; price: number; instructor: string; desc: string; lessons: string[] }
 export const courses: Course[] = [
   { id: 'c1', title: 'Fundamentos de ecografía', level: 'Básico', hours: 3, price: 0, instructor: 'Equipo MDS', desc: 'Física del ultrasonido, perillas y modos esenciales.', lessons: ['Física del ultrasonido', 'Modos B, M y Doppler', 'Optimización de imagen', 'Cuidado del transductor'] },

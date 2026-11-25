@@ -6,7 +6,7 @@ const P: Record<string, string> = {
   ticket: 'M4 6h16a1 1 0 011 1v3a2 2 0 000 4v3a1 1 0 01-1 1H4a1 1 0 01-1-1v-3a2 2 0 000-4V7a1 1 0 011-1zM14 6v12',
   sparkle: 'M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3zM19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2z',
   user: 'M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0',
-  plus: 'M12 5v14M5 12h14', minus: 'M5 12h14', check: 'M5 13l4 4L19 7',
+  x: 'M6 6l12 12M18 6L6 18', plus: 'M12 5v14M5 12h14', minus: 'M5 12h14', check: 'M5 13l4 4L19 7',
   calendar: 'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4',
   pin: 'M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11zM12 12a2 2 0 100-4 2 2 0 000 4z',
   chevron: 'M9 6l6 6-6 6', lock: 'M6 11h12v9H6zM8 11V8a4 4 0 018 0v3', play: 'M8 5l11 7-11 7V5z',
