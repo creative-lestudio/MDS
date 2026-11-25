@@ -6,12 +6,16 @@
   --glass:rgba(255,255,255,.86);--sh:0 1px 2px rgba(23,54,72,.05),0 10px 28px -14px rgba(23,54,72,.2);
   --r:18px;--ease:cubic-bezier(.22,1,.36,1);--fd:Poppins,system-ui,sans-serif;--f:Inter,system-ui,-apple-system,sans-serif;
 }
-@media(prefers-color-scheme:dark){:root{color-scheme:dark;
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
   --bg:#0b2230;--surface:#113044;--surface2:#1a4259;--ink:#e8f3f8;--ink2:#9fc3d5;--ink3:#6f98ad;--line:rgba(160,205,225,.16);
   --brand:#8cc3dc;--btn:#36657d;--tint:rgba(140,195,220,.16);--ok:#3ccf91;--warn:#f0a040;
   --glass:rgba(11,34,48,.84);--sh:0 1px 2px rgba(0,0,0,.35),0 10px 28px -14px rgba(0,0,0,.55)}}
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0b2230;--surface:#113044;--surface2:#1a4259;--ink:#e8f3f8;--ink2:#9fc3d5;--ink3:#6f98ad;--line:rgba(160,205,225,.16);
+  --brand:#8cc3dc;--btn:#36657d;--tint:rgba(140,195,220,.16);--ok:#3ccf91;--warn:#f0a040;
+  --glass:rgba(11,34,48,.84);--sh:0 1px 2px rgba(0,0,0,.35),0 10px 28px -14px rgba(0,0,0,.55)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{background:var(--bg)}
+html,body{background:var(--bg)}
 body{margin:0;color:var(--ink);font:15px/1.5 var(--f);-webkit-font-smoothing:antialiased;font-feature-settings:'tnum' 1}
 a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit;color:inherit}
 .ic{flex:none}
@@ -25,7 +29,8 @@ b{font-weight:600}
 /* cabecera */
 .top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:6px;margin:0 -20px;padding:10px 20px;border-bottom:1px solid var(--line)}
 .brand{flex:1;display:flex}.brand img{height:30px;display:block}
-@media(prefers-color-scheme:dark){.brand img{filter:brightness(0) invert(1) opacity(.92)}}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .brand img{filter:brightness(0) invert(1) opacity(.92)}}
+:root[data-theme="dark"] .brand img{filter:brightness(0) invert(1) opacity(.92)}
 .ibtn{position:relative;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;color:var(--brand);transition:background .2s}
 .ibtn:hover,.ibtn.on{background:var(--tint)}
 .ibtn i{position:absolute;top:2px;right:0;font-style:normal;font-size:10px;font-weight:600;background:var(--brand);color:var(--surface);border-radius:99px;min-width:16px;padding:0 4px;text-align:center;line-height:16px}
